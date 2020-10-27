@@ -8,17 +8,17 @@ def numerical_derivative(f,x):
 
     while not it.finished:
         idx=it.multi_index
-        tmp_value=x[idx]
+        tmp_val=x[idx]
 
-        x[idx]=float(tmp_value)+delta_x   #delta_x만큼 +로 움직였을 때
+        x[idx]=float(tmp_val)+delta_x   #delta_x만큼 +로 움직였을 때
         fx1=f(x)
 
-        x[idx]=tmp_value-delta_x    #delta_x만큼 -로 움직였을 때
+        x[idx]=tmp_val-delta_x    #delta_x만큼 -로 움직였을 때
         fx2=f(x)
 
         grad[idx]=(fx1-fx2)/(2*delta_x) #각 입력값에서 delta_x만큼 움직인 평균 거리 도출
 
-        x[idx]=tmp_value
+        x[idx]=tmp_val
 
         it.iternext()
 
